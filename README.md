@@ -24,4 +24,4 @@ Its very easy to install.
 License
 -------
 
-GNU GPLv3
+[GNU GPLv3](https://github.com/faab007/simpledocs/blob/main/LICENSE)
