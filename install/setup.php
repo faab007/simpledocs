@@ -29,7 +29,7 @@
 			`Id` varchar(50) NOT NULL,
 			`Url` varchar(100) CHARACTER SET utf8 NOT NULL,
 			`Title` varchar(100) CHARACTER SET utf8 NOT NULL,
-			`Contents` text CHARACTER SET utf8 NOT NULL,
+			`Contents` text CHARACTER SET utf8 DEFAULT NULL,
 			PRIMARY KEY (`Id`)
 		) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 	");
