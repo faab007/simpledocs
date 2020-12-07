@@ -101,10 +101,17 @@
                                     Title:
                                     <input class="form-control" type="text" placeholder="Title" name="Title" value="<?php echo $Title; ?>">
                                 </div>
-                                <div class="col">
-                                    URL:
-                                    <input class="form-control" type="text" placeholder="Title" name="Url" value="<?php echo $Url; ?>">
-                                </div>
+                                <?php
+                                    if($Url == "default"){
+                                        echo '<input class="form-control" type="hidden" placeholder="Title" name="Url" value="'.$Url.'">';
+                                    }else{
+                                        echo '
+                                        <div class="col">
+                                            URL:
+                                            <input class="form-control" type="text" placeholder="Title" name="Url" value="'.$Url.'">
+                                        </div>';
+                                    }
+                                ?>
                             </div><br>
                             <?php
                                 if(empty($TinyMCEKey)){

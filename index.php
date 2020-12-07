@@ -70,7 +70,17 @@
                             while($row = $pdoResult->fetch(PDO::FETCH_ASSOC)){
                                 $Id = $row['Id'];
                                 $Title = $row['Title'];
-                                $Page = $row['Page'];
+                                
+                                $PageId = $row['Page'];
+                                $pdoResult_PageLink = $PDOdb->prepare("SELECT * FROM pages WHERE Id=:Id");
+                                $pdoExec_PageLink = $pdoResult_PageLink->execute(array(":Id" => $PageId));
+                                $result = $pdoResult_PageLink->fetchAll();
+                                if(isset($result[0]['Url'])){
+                                    $Page = $result[0]['Url'];
+                                }else{
+                                    $Page = "none";
+                                }
+
                                 $Level = $row['Level'];
                                 $NewCat = $row['NewCat'];
 
@@ -93,22 +103,42 @@
                                     $ItemColor = $MenuLevel5Color;
                                 }
                                 
-                                if($NewCat == "true"){
-                                    echo '
-                                    <div class="'.$Level.'" style="margin-top: 10px;">
-                                        <a style="color: '.$ItemColor.'" href="./?'.$Page.'">
-                                            <p>- '.$Title.'</p>
-                                        </a>
-                                    </div>
-                                    ';
+                                if($Page == "none"){
+                                    if($NewCat == "true"){
+                                        echo '
+                                        <div class="'.$Level.'" style="margin-top: 10px;">
+                                            <a style="color: '.$ItemColor.'">
+                                                <p>- '.$Title.'</p>
+                                            </a>
+                                        </div>
+                                        ';
+                                    }else{
+                                        echo '
+                                        <div class="'.$Level.'">
+                                            <a style="color: '.$ItemColor.'">
+                                                <p>- '.$Title.'</p>
+                                            </a>
+                                        </div>
+                                        ';
+                                    }
                                 }else{
-                                    echo '
-                                    <div class="'.$Level.'">
-                                        <a style="color: '.$ItemColor.'" href="./?'.$Page.'">
-                                            <p>- '.$Title.'</p>
-                                        </a>
-                                    </div>
-                                    ';
+                                    if($NewCat == "true"){
+                                        echo '
+                                        <div class="'.$Level.'" style="margin-top: 10px;">
+                                            <a style="color: '.$ItemColor.'" href="./?'.$Page.'">
+                                                <p>- '.$Title.'</p>
+                                            </a>
+                                        </div>
+                                        ';
+                                    }else{
+                                        echo '
+                                        <div class="'.$Level.'">
+                                            <a style="color: '.$ItemColor.'" href="./?'.$Page.'">
+                                                <p>- '.$Title.'</p>
+                                            </a>
+                                        </div>
+                                        ';
+                                    }
                                 }
                             }
                         }else{

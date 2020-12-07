@@ -65,17 +65,18 @@
                         <form action="../server.php" method="POST" class="form form-inline">
                             <input class="form-control" type="text" placeholder="Title" name="Title">&nbsp;
                             <select class="form-control"  name="Page">
-                                <option disabled selected>Select Page</option>
+                                <option value="none" selected>No page</option>
                                 <?php
                                     $pdoResult_Pages2 = $PDOdb->prepare("SELECT * FROM pages ORDER BY Id DESC");
                                     $pdoExec_Pages2 =  $pdoResult_Pages2->execute();
                                     
                                     if($pdoExec_Pages2){
                                         while($row_Pages2 = $pdoResult_Pages2->fetch(PDO::FETCH_ASSOC)){
+                                            $Id = $row_Pages2['Id'];
                                             $Url = $row_Pages2['Url'];
                                             $Title = $row_Pages2['Title'];
                                             
-                                            echo '<option value="'.$Url.'">'.$Title.'</option>';
+                                            echo '<option value="'.$Id.'">'.$Title.'</option>';
                                         }
                                     }else{
                                         echo '<option disabled selected>No pages Found</option>';
@@ -115,9 +116,19 @@
                                     
                                     if($pdoExec){
                                         while($row = $pdoResult->fetch(PDO::FETCH_ASSOC)){
-                                            $Id = $row['Id'];
+                                            $ItemId = $row['Id'];
                                             $Title = $row['Title'];
-                                            $Page = $row['Page'];
+                                            
+                                            $PageId = $row['Page'];
+                                            $pdoResult_PageLink = $PDOdb->prepare("SELECT * FROM pages WHERE Id=:Id");
+                                            $pdoExec_PageLink = $pdoResult_PageLink->execute(array(":Id" => $PageId));
+                                            $result = $pdoResult_PageLink->fetchAll();
+                                            if(isset($result[0]['Url'])){
+                                                $Page = $result[0]['Url'];
+                                            }else{
+                                                $Page = "none";
+                                            }
+                                            
                                             $Level = $row['Level'];
                                             $Order = $row['Order'];
                                             $NewCat = $row['NewCat'];
@@ -129,18 +140,25 @@
                                                     <td>
                                                         <select class="form-control" name="page">
                                                         ';
+                                                            if($Page == "none"){
+                                                                echo '<option selected value="none" selected>No page</option>';
+                                                            }else{
+                                                                echo '<option value="none">No page</option>';
+                                                            }
+                                                            
                                                             $pdoResult_Pages = $PDOdb->prepare("SELECT * FROM pages ORDER BY Id DESC");
                                                             $pdoExec_Pages =  $pdoResult_Pages->execute();
-                                                            
+
                                                             if($pdoExec_Pages){
                                                                 while($row_Pages = $pdoResult_Pages->fetch(PDO::FETCH_ASSOC)){
-                                                                    $Url = $row_Pages['Url'];
-                                                                    $Title = $row_Pages['Title'];
+                                                                    $Id = $row_Pages['Id'];
+                                                                    $PageUrl = $row_Pages['Url'];
                                                                     
-                                                                    if($Url == $Page){
-                                                                        echo '<option selected value="'.$Url.'">'.$Title.'</option>';
+                                                                    $Title = $row_Pages['Title'];
+                                                                    if($PageUrl == $Page && $Page != "none"){
+                                                                        echo '<option selected value="'.$Id.'">'.$Title.'</option>';
                                                                     }else{
-                                                                        echo '<option value="'.$Url.'">'.$Title.'</option>';
+                                                                        echo '<option value="'.$Id.'">'.$Title.'</option>';
                                                                     }
                                                                 }
                                                             }else{
@@ -203,7 +221,7 @@
                                                         </select>&nbsp;
                                                     </td>
                                                     <td>
-                                                        <input class="form-control" type="hidden" readonly="" name="Id" value="'.$Id.'">
+                                                        <input class="form-control" type="hidden" readonly="" name="Id" value="'.$ItemId.'">
                                                         <button type="submit" class="btn btn-primary" name="updatemenuitem">Update</button>
                                                         <button type="submit" class="btn btn-primary" name="deletemenuitem">Delete</button>
                                                     </td>

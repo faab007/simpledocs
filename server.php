@@ -287,6 +287,10 @@
         $Level = $_POST['Level'];
         $Order = $_POST['Order'];
         $NewCat = $_POST['NewCat'];
+
+        $PageId = $_GET['Id'];
+        $pdoResult_Page = $PDOdb->prepare("SELECT * FROM pages WHERE `Id`=:PageId");
+        $pdoExec_Page = $pdoResult_Page->execute(array(":PageId"=>$PageId));
         
         $pdoResult = $PDOdb->prepare("INSERT INTO `menuitems` (`Id`, `Title`, `Page`, `Level`, `Order`, `NewCat`) VALUES (:Id, :Title, :Page, :Level, :Order, :NewCat);");
 		$pdoExec = $pdoResult->execute(array(":Title"=>$Title, ":Page"=>$Page, ":Level"=>$Level, ":Order"=>$Order, ":NewCat"=>$NewCat, ":Id"=>$Id));
