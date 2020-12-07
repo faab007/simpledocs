@@ -149,7 +149,7 @@
                 <!-- End: MenuItem -->
             </div>
             <div class="Footer">
-                <p class="text-center" style="<?php echo $MenuFooterBorder; ?>">Powered By <a href="#link" target="_BLANK"><span class="FooterByText">Simple Docs</span></a><a class="Login" href="./login"><?php echo $LoginLinkText; ?></a></p>
+                <p class="text-center" style="<?php echo $MenuFooterBorder; ?>">Powered By <a href="https://github.com/faab007/simpledocs" target="_BLANK"><span class="FooterByText">Simple Docs</span></a><a class="Login" href="./login"><?php echo $LoginLinkText; ?></a></p>
             </div>
         </div>
         <script>
