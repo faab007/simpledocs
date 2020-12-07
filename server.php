@@ -1,6 +1,9 @@
 <?php
-    include 'dbcon.php';
-    session_start();
+    ini_set('session.gc_maxlifetime', 65535);
+	header("X-Frame-Options: SAMEORIGIN");
+	session_set_cookie_params(65535);
+	session_start();
+	include('dbcon.php');
 
     if(isset($_GET['methode'])){
 		$methode = $_GET['methode'];
@@ -61,13 +64,11 @@
                 </script>
                 ';
             }else{
-                $_SESSION['status'] = "error";
-                $_SESSION['statusmsg'] = "User not found";
-                header('location: ./login');
+                header('location: ./login?error=usernotfound');
                 echo '
                 <script>
-                    location.replace("./login");
-                    window.location.href = "./login"
+                    location.replace("./login?error=usernotfound");
+                    window.location.href = "./login?error=usernotfound"
                 </script>
                 ';
             }
@@ -81,11 +82,11 @@
         unset($_SESSION['UserId']);
 		unset($_SESSION['UserName']);
 		session_destroy();
-		header("location: ./login");
+		header("location: ./");
 		echo '
 		<script>
-			location.replace("./login");
-			window.location.href = "./login"
+			location.replace("./");
+			window.location.href = "./"
 		</script>
 		';
     }

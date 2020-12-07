@@ -319,3 +319,30 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
 	background: #555
 }
+
+.error-box{
+	display: block;
+    text-align: center;
+    align-items: center;
+	align-content: center;
+	background-color: red;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	margin-right: -10px;
+	color: white;
+}
+
+.success-box{
+    text-align: center;
+    align-items: center;
+	align-content: center;
+	background-color: green;
+	border-radius: 5px;
+	margin-left: 10px;
+	margin-right: -10px;
+	padding: 10px;
+	margin-bottom: 5px;
+	color: white;
+}

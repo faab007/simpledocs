@@ -1,5 +1,5 @@
 <?php 
-    include 'server.php';
+    include './server.php';
 
     if(!file_exists("./config.php")){
         header('location: ./install');

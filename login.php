@@ -1,5 +1,22 @@
 <?php 
     include 'server.php';
+    if(isset($_SESSION['UserId'])){
+        header('location: ../admin/');
+        echo '
+        <script>
+            location.replace("../admin/");
+            window.location.href = "../admin/"
+        </script>
+        ';
+    }
+    
+    if(isset($_GET['error'])){
+        if($_GET['error'] == "usernotfound"){
+            $error = '<div class="error-box"><strong>Incorrect username or password</strong></div>';
+        }
+    }else{
+        $error = "";
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,6 +40,7 @@
                     <div>
                         <h3 id="heading">Log in:</h3>
                     </div>
+                    <?php echo $error ?>
                     <input class="form-control" type="text" id="input" placeholder="Username" name="username" required>
                     <input class="form-control" type="password" id="input" placeholder="Password" name="password" required>
                     <button class="btn btn-primary" id="button" name="login" style="background-color:#007ac9;" type="submit">Log in</button>
