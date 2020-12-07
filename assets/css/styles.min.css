@@ -1,0 +1,321 @@
+#example {
+	margin-bottom: 0
+}
+
+.login-card {
+	max-width: 350px;
+	padding: 40px;
+	background-color: #f7f7f7;
+	margin: 50px auto 25px;
+	border-radius: 2px;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, .3)
+}
+
+.login-card .profile-name-card {
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+	margin: 10px 0 0;
+	min-height: 1em
+}
+
+.login-card .reauth-email {
+	display: block;
+	color: #404040;
+	line-height: 2;
+	margin-bottom: 10px;
+	font-size: 14px;
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	box-sizing: border-box
+}
+
+.login-card .form-signin button,
+.login-card .form-signin input[type=email],
+.login-card .form-signin input[type=password],
+.login-card .form-signin input[type=text] {
+	height: 44px;
+	font-size: 16px;
+	width: 100%;
+	display: block;
+	margin-bottom: 10px;
+	z-index: 1;
+	position: relative;
+	box-sizing: border-box
+}
+
+.login-card .form-signin .form-control:focus {
+	border-color: #6891a2;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #6891a2;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #6891a2
+}
+
+.login-card .btn.btn-signin {
+	font-weight: 700;
+	height: 36px;
+	line-height: 36px;
+	font-size: 14px;
+	background: #6891a2;
+	border-radius: 3px;
+	border: none;
+	transition: 218ms;
+	padding: 0
+}
+
+.login-card .btn.btn-signin:active,
+.login-card .btn.btn-signin:focus,
+.login-card .btn.btn-signin:hover {
+	background: #355a69
+}
+
+.login-one-form {
+	transform: translate(-50%, -50%);
+	top: 50%;
+	max-width: 350px;
+	width: 350px;
+	left: 50%;
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 5px;
+	position: absolute;
+	box-shadow: 3px 3px 4px rgba(0, 0, 0, .2)
+}
+
+.login-one {
+	background-color: rgba(0, 0, 0, .1);
+	min-height: 100%;
+	height: 1000px;
+	background-size: cover
+}
+
+.login-one-ico {
+	padding: 30px;
+	font-size: 50px;
+	text-align: center
+}
+
+.form-group {
+	text-align: center
+}
+
+#input {
+	margin: 10px
+}
+
+#button {
+	width: 100%;
+	margin: 10px
+}
+
+#heading {
+	padding-bottom: 10px
+}
+
+#wrapper {
+	padding-left: 0;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s
+}
+
+#sidebar-wrapper {
+	z-index: 1000;
+	position: fixed;
+	left: 250px;
+	width: 0;
+	height: 100%;
+	margin-left: -250px;
+	overflow-y: auto;
+	background: #000;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s
+}
+
+.sidebar-nav {
+	position: absolute;
+	top: 0;
+	width: 250px;
+	margin: 0;
+	padding: 0;
+	list-style: none
+}
+
+.sidebar-nav li {
+	text-indent: 20px;
+	line-height: 40px
+}
+
+.sidebar-nav li a {
+	display: block;
+	text-decoration: none;
+	color: #999
+}
+
+.sidebar-nav li a:hover {
+	text-decoration: none;
+	color: #fff;
+	background: rgba(255, 255, 255, .2)
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+	text-decoration: none
+}
+
+.sidebar-nav>.sidebar-brand {
+	height: 65px;
+	font-size: 18px;
+	line-height: 60px
+}
+
+.sidebar-nav>.sidebar-brand a {
+	color: #999
+}
+
+.sidebar-nav>.sidebar-brand a:hover {
+	color: #fff;
+	background: 0 0
+}
+
+@media (min-width:768px) {
+	#wrapper {
+		padding-left: 250px
+	}
+	#sidebar-wrapper {
+		width: 250px
+	}
+}
+
+*,
+h1,
+p {
+	margin: 0
+}
+
+body {
+	background-color: #fff
+}
+
+.noselect {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none
+}
+
+.SideMenu {
+	padding: 10px 10px 50px;
+	border-right: 1px solid #e6e6e6;
+	background-color: #fff;
+	width: 300px;
+	height: 100%;
+	min-height: 100vh;
+	-webkit-box-shadow: 4px 0 18px -3px rgba(0, 0, 0, .75);
+	-moz-box-shadow: 4px 0 18px -3px rgba(0, 0, 0, .75);
+	box-shadow: 4px 0 18px -3px rgba(0, 0, 0, .75)
+}
+
+.header {
+	margin-left: 20px;
+	align-items: center;
+	margin-bottom: 30px;
+	margin-top: 10px
+}
+
+.MenuItems,
+.MenuLayer2 {
+	margin-left: 20px
+}
+
+.MenuItem {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+a {
+	color: #000;
+	text-decoration: none
+}
+
+a:hover {
+	color: gray;
+	text-decoration: none
+}
+
+.MenuLayer0 {
+	margin-left: 0
+}
+
+.MenuLayer1 {
+	margin-left: 20px
+}
+
+.MenuLayer3 {
+	margin-left: 60px
+}
+
+.MenuLayer4 {
+	margin-left: 80px
+}
+
+.MenuLayer5 {
+	margin-left: 100px
+}
+
+.Footer {
+	position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.text-center{
+    background-color: white;
+    border-radius: 5px;
+	margin: 0 10px;
+}
+
+.text-center a .FooterByText {
+    color: #3b5bff;
+}
+
+.Login {
+	margin-left: 10px
+}
+
+.Contents {
+	padding: 10px 10px 10px 20px
+}
+
+.Contents a{
+	color: blue;
+}
+
+.AdminPageTitle {
+	margin-bottom: 10px
+}
+
+.table {
+	margin-bottom: 50px
+}
+
+::-webkit-scrollbar {
+	width: 10px
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f1f1
+}
+
+::-webkit-scrollbar-thumb {
+	background: #888
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555
+}
