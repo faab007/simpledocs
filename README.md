@@ -14,7 +14,7 @@ All u need is a php server and mysql database.
 
 Its very easy to install.
 1. Download the zip and drag all the file in your webserver
-2. Rename `rename to .htaccess` to `.htaccess` in the main folder, admin folder and in the install folder
+2. Rename `rename to .htaccess` to `.htaccess` in the **main** folder, **admin** folder and in the **install** folder
 3. Got to the website
 4. Follow the instruction
 5. And done
