@@ -75,6 +75,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Settings - Simple Docs</title>
+    <link rel="icon" href="./assets/img/icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
@@ -112,7 +113,6 @@
                             <div class="form-group text-left">
                                 <label for="PageTitle">Tab Title Text:</label>
                                 <input class="form-control" type="text" value="<?php echo $TabTitleText; ?>" name="tabtitletext">
-                                <p>Tab icon can be changed at <strong>assets/img/icon.png</strong></p>
                             </div>
                             <div class="form-group text-left">
                                 <label for="PageTitle">Login Text:</label>
