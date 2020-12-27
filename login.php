@@ -1,5 +1,5 @@
 <?php 
-    include './server.php';
+    include 'server.php';
     if(isset($_SESSION['UserId'])){
         header('location: ../admin/');
         echo '
@@ -17,7 +17,7 @@
     }else{
         $error = "";
     }
-
+    
     $pdoResult_Settings = $PDOdb->prepare("SELECT * FROM settings");
     $pdoExec_Settings = $pdoResult_Settings->execute();
     if($pdoExec_Settings){
