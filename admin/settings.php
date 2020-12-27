@@ -112,6 +112,7 @@
                             <div class="form-group text-left">
                                 <label for="PageTitle">Tab Title Text:</label>
                                 <input class="form-control" type="text" value="<?php echo $TabTitleText; ?>" name="tabtitletext">
+                                <p>Tab icon can be changed at <strong>assets/img/icon.png</strong></p>
                             </div>
                             <div class="form-group text-left">
                                 <label for="PageTitle">Login Text:</label>
