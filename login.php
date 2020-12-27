@@ -1,5 +1,5 @@
 <?php 
-    include 'server.php';
+    include './server.php';
     if(isset($_SESSION['UserId'])){
         header('location: ../admin/');
         echo '
@@ -17,13 +17,21 @@
     }else{
         $error = "";
     }
+
+    $pdoResult_Settings = $PDOdb->prepare("SELECT * FROM settings");
+    $pdoExec_Settings = $pdoResult_Settings->execute();
+    if($pdoExec_Settings){
+        while($row = $pdoResult_Settings->fetch(PDO::FETCH_ASSOC)){
+            $TabTitleText = $row['TabTitleText'];
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Login - Simple Docs</title>
+    <title><?php echo $TabTitleText; ?></title>
     <link rel="icon" href="./assets/img/icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
