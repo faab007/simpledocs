@@ -59,7 +59,7 @@
         <!-- End: Sidebar Menu -->
         <div class="page-content-wrapper">
             <div class="container-fluid"><br>
-                <p>Welcome <?php echo $UserName; echo $_SESSION['test'];?>,</p>
+                <p>Welcome <?php echo $UserName;?>,</p>
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="AdminPageTitle">Home</h1>
